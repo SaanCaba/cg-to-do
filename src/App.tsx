@@ -6,7 +6,7 @@ import TaskList from './components/TaskList';
 import { colors } from './constants/colors';
 
 function App() {
-  const { addTask, currentTasks } = useTasks();
+  const { addTask, currentTasks, completeTask, pendingTasks } = useTasks();
   return (
     <Box
       component='main'
@@ -23,7 +23,11 @@ function App() {
         To do List
       </Typography>
       <AddTaskForm addTask={addTask} />
-      <TaskList currentTasks={currentTasks} />
+      <TaskList
+        currentTasks={currentTasks}
+        completeTask={completeTask}
+        pendingTasks={pendingTasks}
+      />
     </Box>
   );
 }

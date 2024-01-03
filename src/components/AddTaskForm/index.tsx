@@ -7,7 +7,6 @@ import {
   InputLabel
 } from '@mui/material';
 import { useState } from 'react';
-import { colors } from '../../constants/colors';
 
 interface Props {
   addTask: (task: string) => void;
@@ -41,7 +40,10 @@ function AddTaskForm({ addTask }: Props) {
     <Grid
       container
       sx={{
-        width: '600px'
+        width: {
+          xs: '90%',
+          xl: '600px'
+        }
       }}
       component='form'
       onSubmit={(e) => handleSubmit(e)}

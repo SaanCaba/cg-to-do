@@ -1,4 +1,4 @@
 export const colors = {
-  coffee: '#6F4E37',
+  coffee: '#7B3F00',
   citron: '#DDD06A'
 };
