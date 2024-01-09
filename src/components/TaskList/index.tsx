@@ -2,7 +2,6 @@ import { Paper, Typography } from '@mui/material';
 import { Task } from '../../models/task.model';
 import TaskItem from './TaskItem';
 import { colors } from '../../constants/colors';
-import { useEffect, useState } from 'react';
 
 interface Props {
   currentTasks: Task[];
@@ -11,12 +10,6 @@ interface Props {
 }
 
 function TaskList({ currentTasks, completeTask, pendingTasks }: Props) {
-  const [localTasks, setLocalTasks] = useState<Task[]>([]);
-
-  useEffect(() => {
-    setLocalTasks(currentTasks);
-  }, [currentTasks]);
-
   return (
     <Paper
       sx={{
@@ -48,7 +41,7 @@ function TaskList({ currentTasks, completeTask, pendingTasks }: Props) {
           >
             Pending tasks: {pendingTasks}
           </Typography>
-          {localTasks.map(({ name, isCompleted }, i) => {
+          {currentTasks.map(({ name, isCompleted }, i) => {
             return (
               <TaskItem
                 key={i}
